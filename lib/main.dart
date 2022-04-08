@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'dashboard.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
-  MyAppState createState() {
-	return MyAppState();
+  Widget build(BuildContext context) {
+	return MaterialApp(title: 'UPI dalam data', home: MyAppState());
   }
 }
 
-class MyAppState extends State<MyApp> {
-  String _nama = "";
+class MyAppState extends StatelessWidget {
+  String _username = "";
+  String _password = "";
   @override
   Widget build(BuildContext context) {
 	return MaterialApp(
@@ -108,8 +110,10 @@ class MyAppState extends State<MyApp> {
         	  
             Padding(padding: EdgeInsets.only(top:15.0),),
             ElevatedButton(
-          	  onPressed: () {
-            	  setState( () {} ); //refresh
+          	   onPressed: () {
+            	 Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            	      return dashboard();
+          	   }));
           	  },
           	  child: const Text('Login'),	 
               ),
