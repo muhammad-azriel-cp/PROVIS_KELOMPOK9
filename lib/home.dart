@@ -114,7 +114,7 @@ class Home extends StatelessWidget {
                       color: Colors.black)),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 30, right: 30),
+              margin: const EdgeInsets.only(top: 20,left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .4),
