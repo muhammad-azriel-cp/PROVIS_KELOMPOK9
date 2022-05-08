@@ -21,13 +21,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        
         body: SingleChildScrollView(
           child: Column(
           children: [
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: new AssetImage("assets/images/img-home.png"),
+                image: new AssetImage("assets/images/img-dashboard.png"),
                 fit: BoxFit.fitWidth,
               )
             ),
