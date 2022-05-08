@@ -27,7 +27,7 @@ class _DosenState extends State<Dosen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: new AssetImage("assets/images/img-home.png"),
+                image: new AssetImage("assets/images/img-dashboard.png"),
                 fit: BoxFit.fitWidth,
               )
             ),
@@ -100,40 +100,102 @@ class _DosenState extends State<Dosen> {
               margin: const EdgeInsets.only( left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
-                childAspectRatio: (1 / .4),
+                childAspectRatio: (1 / .2),
                 shrinkWrap: true,
-                children: List.generate(angka.length, (index) {
-                  return Card(
+                children: [
+                  Card(
                     color: Colors.blueAccent,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       // ignore: prefer_const_literals_to_create_immutables
                       children: <Widget>[
                         Container(
-                          child: Icon(
-                          Icons.school_outlined,
-                          color: Colors.white,
-                          size: 20.0,
-                        ),
-                        ),
-                        Container(
                           child: ListTile(
-                          //leading: Icon(Icons.album, size: 45),
-                          title: Text(
-                            "Nama Dosen",
-                            style:
-                                const TextStyle(fontSize: 24, color: Colors.white70),
-                          ),
-                          subtitle: Text("Ilmu Komputer",
+                            leading: Icon(Icons.school_outlined, size: 45),
+                            trailing: new Text("30 Penelitian", style: TextStyle(color: Colors.white),),
+                            title: Text(
+                              "Prof. Dr. Munir, M. IT.",
+                              style:
+                                  const TextStyle( fontSize: 20, color: Colors.white70),
+                            ),
+                            subtitle: Text("Ilmu Komputer",
                               style:
                                   TextStyle(fontSize: 16, color: Colors.white)),
+                          ),
                         ),
-                        ),
-                        
                       ],
                     ),
-                  );
-                }),
+                  ),
+                  Card(
+                    color: Colors.blueAccent,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: Icon(Icons.school_outlined, size: 45),
+                            trailing: new Text("27 Penelitian", style: TextStyle(color: Colors.white),),
+                            title: Text(
+                              "Dr. Yudi Wibisono, M.T.",
+                              style:
+                                  const TextStyle( fontSize: 20, color: Colors.white70),
+                            ),
+                            subtitle: Text("Ilmu Komputer",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blueAccent,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: Icon(Icons.school_outlined, size: 45),
+                            trailing: new Text("26 Penelitian", style: TextStyle(color: Colors.white),),
+                            title: Text(
+                              "Dr. Muhammad Nursalman, M.T.",
+                              style:
+                                  const TextStyle( fontSize: 20, color: Colors.white70),
+                            ),
+                            subtitle: Text("Ilmu Komputer",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                   Card(
+                    color: Colors.blueAccent,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: Icon(Icons.school_outlined, size: 45),
+                            trailing: new Text("24 Penelitian", style: TextStyle(color: Colors.white),),
+                            title: Text(
+                              "Dr. Lala Septem Riza, M.T.",
+                              style:
+                                  const TextStyle( fontSize: 20, color: Colors.white70),
+                            ),
+                            subtitle: Text("Ilmu Komputer",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ]),
