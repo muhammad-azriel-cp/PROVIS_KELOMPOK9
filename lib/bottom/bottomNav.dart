@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/bottom/detailFIP.dart';
+import 'detailFIP.dart';
+import 'universitas.dart';
 import 'home.dart';
 import 'dosen.dart';
 import 'fakultas.dart';
+import 'mahasiswa.dart';
 
 class BottomNav extends StatefulWidget {
 
@@ -17,6 +19,8 @@ class _BottomNavState extends State<BottomNav> {
     Home(),
     Dosen(),
     Fakultas(),
+    Mhs(),
+    Universitas(),
   ];
   @override
   Widget build(BuildContext context) {
