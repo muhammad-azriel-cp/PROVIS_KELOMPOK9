@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/bg.png"),
+                      image: AssetImage("assets/images/img-dashboard.png"),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -48,14 +49,6 @@ class _HomeState extends State<Home> {
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.white)),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top:50, right:50),
-                    child: Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                      size: 20.0,
-                    ),
                   ),
                 ]),
                 Container(
@@ -144,13 +137,13 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         ListTile(
                           title: Text(
-                            " Judul Berita",
+                            "Berita",
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black87),
+                                TextStyle(fontSize: 24, color: Colors.black26),
                           ),
                           subtitle: Text("Deskripsi",
                               style: TextStyle(
-                                  fontSize: 16, color: Colors.black26)),
+                                  fontSize: 16, color: Colors.black87)),
                           leading: CircleAvatar(
                             backgroundImage: AssetImage("assets/images/bg.png"),
                           ),
@@ -163,7 +156,6 @@ class _HomeState extends State<Home> {
             ),
           ]),
         ),
-        
       ),
     );
   }
