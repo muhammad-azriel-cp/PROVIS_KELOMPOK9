@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'kerjasamaProdi.dart';
+import 'kerjasamaUniv.dart';
 
 class Universitas extends StatefulWidget {
   @override
@@ -45,9 +47,9 @@ class _UniversitasState extends State<Universitas> {
                                 child: Text(
                                   "INFORMASI UNIVERSITAS",
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 25,
+                                    fontSize: 30,
                                   ),
                                 ),
                               ),
@@ -116,19 +118,24 @@ class _UniversitasState extends State<Universitas> {
                           children: <Widget>[
                             Container(
                               child: ListTile(
-                                leading: Icon(Icons.school_outlined, size: 45),
+                                leading: Icon(Icons.account_balance_sharp, size: 45),
                                 // trailing: new Text(
                                 //   "30 Penelitian",
                                 //   style: TextStyle(color: Colors.white),
                                 // ),
                                 title: Text(
-                                  "Universitas A",
+                                  "Universitas",
                                   style: const TextStyle(
                                       fontSize: 20, color: Colors.white70),
                                 ),
                                 // subtitle: Text("Ilmu Komputer",
                                 //     style: TextStyle(
                                 //         fontSize: 16, color: Colors.white)),
+                              onTap: () {
+                               Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                return KerjasamaUniv();
+                              }));
+                            },
                               ),
                             ),
                           ],
@@ -148,7 +155,7 @@ class _UniversitasState extends State<Universitas> {
                                 //   style: TextStyle(color: Colors.white),
                                 // ),
                                 title: Text(
-                                  "Perusahaan A",
+                                  "Fakultas",
                                   style: const TextStyle(
                                       fontSize: 20, color: Colors.black54),
                                 ),
@@ -174,44 +181,23 @@ class _UniversitasState extends State<Universitas> {
                                 //   style: TextStyle(color: Colors.white),
                                 // ),
                                 title: Text(
-                                  "Fakultas A",
+                                  "Program Studi",
                                   style: const TextStyle(
                                       fontSize: 20, color: Colors.white70),
                                 ),
                                 // subtitle: Text("Ilmu Komputer",
                                 //     style: TextStyle(
                                 //         fontSize: 16, color: Colors.white)),
+                              onTap: () {
+                               Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                return KerjasamaProdi();
+                              }));
+                              }
                               ),
                             ),
                           ],
                         ),
                       ),
-                      // Card(
-                      //   color: Colors.blueAccent,
-                      //   child: Column(
-                      //     mainAxisSize: MainAxisSize.min,
-                      //     // ignore: prefer_const_literals_to_create_immutables
-                      //     children: <Widget>[
-                      //       Container(
-                      //         child: ListTile(
-                      //           leading: Icon(Icons.school_outlined, size: 45),
-                      //           trailing: new Text(
-                      //             "24 Penelitian",
-                      //             style: TextStyle(color: Colors.white),
-                      //           ),
-                      //           title: Text(
-                      //             "Dr. Lala Septem Riza, M.T.",
-                      //             style: const TextStyle(
-                      //                 fontSize: 20, color: Colors.white70),
-                      //           ),
-                      //           subtitle: Text("Ilmu Komputer",
-                      //               style: TextStyle(
-                      //                   fontSize: 16, color: Colors.white)),
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
