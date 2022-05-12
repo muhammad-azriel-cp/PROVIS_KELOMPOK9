@@ -22,6 +22,8 @@ class _DetailFIPState extends State<DetailFIP> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+            //     appBar: AppBar(leading: IconButton(icon:Icon(Icons.arrow_back),
+            // onPressed:() => Navigator.pop(context, false),)),
         body: SingleChildScrollView(
           child: Column(children: <Widget>[
             Stack(children: <Widget>[
@@ -40,9 +42,12 @@ class _DetailFIPState extends State<DetailFIP> {
                 //Yang diatas backgroud gambar
                 Row(children: <Widget>[
                   Container(
+                    child: IconButton(onPressed:()=>Navigator.pop(context), icon: Icon(Icons.arrow_back, color:Colors.white)),
+                  ),
+                  Container(
                     margin: const EdgeInsets.only(
                         top: 100, right: 20, left: 20, bottom: 0),
-                    child: const Text("FAKULTAS ILMU PENDIDIKAN (FIP)",
+                    child: const Text("FAKULTAS ILMU PENDIDIKAN",
                         style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
