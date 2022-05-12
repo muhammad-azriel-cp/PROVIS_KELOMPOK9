@@ -43,7 +43,7 @@ class _FakultasState extends State<Fakultas> {
                   Container(
                     margin: const EdgeInsets.only(
                         top: 100, right: 20, left: 20, bottom: 0),
-                    child: const Text("INFORMASI DOSEN",
+                    child: const Text("INFORMASI FAKULTAS",
                         style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -125,8 +125,7 @@ class _FakultasState extends State<Fakultas> {
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white)),
                             onTap: () {
-                               Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
+                               Navigator.push(context, MaterialPageRoute(builder: (context) {
                                 return DetailFIP();
                               }));
                             },
