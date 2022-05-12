@@ -38,19 +38,23 @@ class _FakultasState extends State<Fakultas> {
                 ),
               ),
               Column(children: <Widget>[
-                //Yang diatas backgroud gambar
-                Row(children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(
-                        top: 100, right: 20, left: 20, bottom: 0),
-                    child: const Text("INFORMASI FAKULTAS",
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
-                  ),
-                ]),
-              ])
+                    Padding(
+                        padding: EdgeInsets.only(top: 50),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                child: Text(
+                                  "INFORMASI FAKULTAS",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              ),
+                            ]))
+                  ])
             ]),
             Container(
               margin: const EdgeInsets.only(left: 30, top: 20),
@@ -146,7 +150,7 @@ class _FakultasState extends State<Fakultas> {
                             title: Text(
                               "Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam (FPMIPA)",
                               style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold,),
+                                  const TextStyle( fontSize: 16, color: Colors.black54, fontWeight: FontWeight.bold,),
                             ),
                             subtitle: Text("12 Program Studi",
                               style:
@@ -198,7 +202,7 @@ class _FakultasState extends State<Fakultas> {
                             title: Text(
                               "Fakultas Pendidikan Seni dan Desain (FPSD)",
                               style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold,),
+                                  const TextStyle( fontSize: 16, color: Colors.black54, fontWeight: FontWeight.bold,),
                             ),
                             subtitle: Text("12 Program Studi",
                               style:
