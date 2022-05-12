@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'notifikasi.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/img-dashboard.png"),
+                      image: AssetImage("assets/images/bg.png"),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -50,6 +51,19 @@ class _HomeState extends State<Home> {
                             fontWeight: FontWeight.bold,
                             color: Colors.white)),
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 50, right: 50),
+                    child: IconButton(
+                        onPressed: () => Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return Notifikasi();
+                            })),
+                        icon: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                          size: 20.0,
+                        )),
+                  ),
                 ]),
                 Container(
                   margin: const EdgeInsets.only(left: 20),
@@ -61,7 +75,7 @@ class _HomeState extends State<Home> {
                           color: Colors.white)),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 150, left: 30, right: 30),
+                  margin: const EdgeInsets.only(top: 100, left: 30, right: 30),
                   width: double.infinity,
                   height: 40,
                   decoration: BoxDecoration(
@@ -122,40 +136,127 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 30, right: 30),
+             Container(
+              margin: const EdgeInsets.only( top: 30,left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
-                childAspectRatio: (1 / .4),
+                childAspectRatio: (1 / .2),
                 shrinkWrap: true,
-                children: List.generate(angka.length, (index) {
-                  return Card(
-                    margin: const EdgeInsets.only(top: 16),
-                    color: Colors.white,
+                children: [
+                  Card(
+                    color: Colors.blueAccent,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
                       children: <Widget>[
-                        ListTile(
-                          title: Text(
-                            "Berita",
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black26),
-                          ),
-                          subtitle: Text("Deskripsi",
-                              style: TextStyle(
-                                  fontSize: 16, color: Colors.black87)),
-                          leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/bg.png"),
+                        Container(
+                          child: ListTile(
+                            leading:  CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/bg.png")),
+                            title: Text(
+                              "Judul",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
+                            ),
+                            subtitle: Text("Deskripsi",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white)),
+                            onTap: () {
+                              setState(() {
+                              });
+                            },
                           ),
                         ),
                       ],
                     ),
-                  );
-                }),
+                  ),
+                  Card(
+                    color: Colors.teal[50],
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/bg.png")),
+                            title: Text(
+                              "Judul",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text("Deskripsi",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.black)),
+                            onTap: () {
+                              setState(() {
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.blueAccent,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/bg.png")),
+                            title: Text(
+                              "Judul",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
+                            ),
+                            subtitle: Text("Deskripsi",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white)),
+                                  onTap: () {
+                              setState(() {
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                   Card(
+                    color: Colors.teal[50],
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        Container(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/bg.png")),
+                            title: Text(
+                              "Judul",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text("Deskripsi",
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.black)),
+                                  onTap: () {
+                              setState(() {
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ]),
         ),
+        
       ),
     );
   }
