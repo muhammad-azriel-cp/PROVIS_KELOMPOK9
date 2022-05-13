@@ -55,17 +55,24 @@ class _KerjasamaUniv1State extends State<KerjasamaUniv1> {
                   ])
             ]),
             Container(
-              margin: const EdgeInsets.only(left: 30, top: 20),
+              margin: const EdgeInsets.only(top: 20),
               alignment: Alignment.center,
               child: const Text("Isola Park",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
+                      color: Colors.black)),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
+              alignment: Alignment.center,
+              child: const Text("Revitalisasi Museum Diknas merupakan implementasi kerjasama UPI bersama Kementerian Pendidikan dan Kebudayaan Republik Indonesia (Kemendikbud RI) melalui program Maching Fund.  Di samping itu, UPI pun menggaet pihak swasta, PT Synon Multindo, dalam menyokong proyek revitaslisasi tersebut. Adapun beban pendanaan dilakukan baik oleh Kemdikbud RI maupun pihak swasta adalah berbanding 1:1",
+                  style: TextStyle(
+                      fontSize: 15,
                       color: Colors.black)),
             ),
           ]),
         ),
-        
       ),
     );
   }
