@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/bg.png"),
+                      image: AssetImage("assets/images/img-dashboard.png"),
                       fit: BoxFit.cover),
                 ),
               ),
