@@ -4,7 +4,7 @@ import 'detailFIP.dart';
 import 'universitas.dart';
 import 'home.dart';
 import 'dosen.dart';
-import 'fakultas.dart';
+import 'fakultasApp.dart';
 import 'mahasiswa.dart';
 
 class BottomNav extends StatefulWidget {
@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
   final List<Widget> body =[
     Home(),
     Dosen(),
-    Fakultas(),
+    FakultasApp(),
     Mhs(),
     Universitas(),
   ];
