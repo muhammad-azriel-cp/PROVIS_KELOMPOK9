@@ -90,7 +90,7 @@ class _FakultasState extends State<FakultasApp> {
                 children:[
                   const Text("Semua Fakultas",
                     style: TextStyle(
-                    fontSize: 21,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.black)
                     ),

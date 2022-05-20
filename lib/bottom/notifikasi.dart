@@ -58,7 +58,7 @@ class _NotifikasiState extends State<Notifikasi> {
                       color: Colors.black)),
             ),
             Container(
-              margin: const EdgeInsets.only( top: 30,left: 30, right: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .2),

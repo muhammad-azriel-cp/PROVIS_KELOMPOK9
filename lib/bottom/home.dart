@@ -40,42 +40,46 @@ class _HomeState extends State<Home> {
               ),
               Column(children: <Widget>[
                 //Yang diatas backgroud gambar
-                Row(children: <Widget>[
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: const EdgeInsets.only(
-                        left: 20, top: 50, right: 20, bottom: 0),
-                    child: const Text("Jum'at , 01 April 2022",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 50, right: 50),
-                    child: IconButton(
-                        onPressed: () => Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return Notifikasi();
-                            })),
-                        icon: Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                          size: 20.0,
-                        )),
-                  ),
-                ]),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Column(children: <Widget>[
+                        Container(
+                          margin: const EdgeInsets.only(top: 50,left: 20),
+                          alignment: Alignment.centerLeft,
+                          child: const Text("Jum'at , 01 April 2022",
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 20),
+                          alignment: Alignment.centerLeft,
+                          child: const Text("Welcome Back!",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ),
+                      ]),
+                      Container(
+                        margin: const EdgeInsets.only(top: 50, left: 30),
+                        child: IconButton(
+                            onPressed: () => Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return Notifikasi();
+                                })),
+                            icon: Icon(
+                              Icons.notifications,
+                              color: Colors.white,
+                              size: 20.0,
+                            )),
+                      ),
+                    ]),
+              
                 Container(
-                  margin: const EdgeInsets.only(left: 20),
-                  alignment: Alignment.centerLeft,
-                  child: const Text("Welcome Back!",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 100, left: 30, right: 30),
+                  margin: const EdgeInsets.only(top: 120, left: 30, right: 30),
                   width: double.infinity,
                   height: 40,
                   decoration: BoxDecoration(
@@ -136,8 +140,8 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
-             Container(
-              margin: const EdgeInsets.only( top: 30,left: 30, right: 30),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .2),
@@ -151,19 +155,22 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Container(
                           child: ListTile(
-                            leading:  CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/bg.png")),
+                            leading: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage("assets/images/bg.png")),
                             title: Text(
                               "Judul",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             subtitle: Text("Deskripsi",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white)),
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.white)),
                             onTap: () {
-                              setState(() {
-                              });
+                              setState(() {});
                             },
                           ),
                         ),
@@ -179,18 +186,20 @@ class _HomeState extends State<Home> {
                         Container(
                           child: ListTile(
                             leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/bg.png")),
+                                backgroundImage:
+                                    AssetImage("assets/images/bg.png")),
                             title: Text(
                               "Judul",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                             subtitle: Text("Deskripsi",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.black)),
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.black)),
                             onTap: () {
-                              setState(() {
-                              });
+                              setState(() {});
                             },
                           ),
                         ),
@@ -206,25 +215,28 @@ class _HomeState extends State<Home> {
                         Container(
                           child: ListTile(
                             leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/bg.png")),
+                                backgroundImage:
+                                    AssetImage("assets/images/bg.png")),
                             title: Text(
                               "Judul",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             subtitle: Text("Deskripsi",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white)),
-                                  onTap: () {
-                              setState(() {
-                              });
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.white)),
+                            onTap: () {
+                              setState(() {});
                             },
                           ),
                         ),
                       ],
                     ),
                   ),
-                   Card(
+                  Card(
                     color: Colors.teal[50],
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -233,18 +245,20 @@ class _HomeState extends State<Home> {
                         Container(
                           child: ListTile(
                             leading: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/bg.png")),
+                                backgroundImage:
+                                    AssetImage("assets/images/bg.png")),
                             title: Text(
                               "Judul",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                             subtitle: Text("Deskripsi",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.black)),
-                                  onTap: () {
-                              setState(() {
-                              });
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.black)),
+                            onTap: () {
+                              setState(() {});
                             },
                           ),
                         ),
@@ -256,7 +270,6 @@ class _HomeState extends State<Home> {
             ),
           ]),
         ),
-        
       ),
     );
   }
