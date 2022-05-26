@@ -51,7 +51,7 @@ class _BottomNavState extends State<BottomNav> {
             ),
           ],
           currentIndex: currentIndex,
-          selectedItemColor: Colors.redAccent,
+          selectedItemColor: Colors.blueAccent,
           unselectedItemColor: Colors.grey,
           showUnselectedLabels: true,
           //onTap: _changeSelectedNavBar,
