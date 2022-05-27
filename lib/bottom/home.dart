@@ -141,7 +141,7 @@ class _HomeState extends State<Home> {
                       color: Colors.black)),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 30, right: 30),
+              margin: const EdgeInsets.only( left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .2),
@@ -155,23 +155,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Container(
                           child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage("assets/images/bg.png")),
+                            leading: Image(image: NetworkImage("assets/images/bg.png")),
+                            trailing: new Text("26 Mei 2022", style: TextStyle(color: Colors.white),),
                             title: Text(
-                              "Judul",
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              "20 Mahasiswa UPI akan mengikuti perkuliahan di 19 Universitas dan di 11 Negara Berbeda",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.white70),
                             ),
-                            subtitle: Text("Deskripsi",
-                                style: TextStyle(
-                                    fontSize: 14, color: Colors.white)),
-                            onTap: () {
-                              setState(() {});
-                            },
+                            subtitle: Text("Prestasi",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white)),
                           ),
                         ),
                       ],
@@ -185,22 +178,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Container(
                           child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage("assets/images/bg.png")),
+                            leading:Image(image: NetworkImage("assets/images/bg.png")),
+                            trailing: new Text("25 Mei 2022", style: TextStyle(color: Colors.black),),
                             title: Text(
-                              "Judul",
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                              "Tim Delagasi UPI Melakukan Lawatan Ke Tampere University  University Finland",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.black54),
                             ),
-                            subtitle: Text("Deskripsi",
-                                style: TextStyle(
-                                    fontSize: 14, color: Colors.black)),
-                            onTap: () {
-                              setState(() {});
-                            },
+                            subtitle: Text("Pendidikan",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                           ),
                         ),
                       ],
@@ -214,29 +201,22 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Container(
                           child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage("assets/images/bg.png")),
+                            leading: Image(image: NetworkImage("assets/images/bg.png")),
+                            trailing: new Text("24 Mei 2022", style: TextStyle(color: Colors.white),),
                             title: Text(
-                              "Judul",
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              "Klaster Pendidikan Vokasi UPI Sambut Akreditasi Internasional",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.white70),
                             ),
-                            subtitle: Text("Deskripsi",
-                                style: TextStyle(
-                                    fontSize: 14, color: Colors.white)),
-                            onTap: () {
-                              setState(() {});
-                            },
+                            subtitle: Text("Lainnya",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white)),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Card(
+                   Card(
                     color: Colors.teal[50],
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -244,22 +224,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Container(
                           child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage("assets/images/bg.png")),
+                            leading: Image(image: NetworkImage("assets/images/bg.png")),
+                            trailing: new Text("17 Mei 2022", style: TextStyle(color: Colors.black),),
                             title: Text(
-                              "Judul",
-                              style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                              "UPI Gelar Acara Silaturahim Idulfitri 1443 Hijriah",
+                              style:
+                                  const TextStyle( fontSize: 16, color: Colors.black54),
                             ),
-                            subtitle: Text("Deskripsi",
-                                style: TextStyle(
-                                    fontSize: 14, color: Colors.black)),
-                            onTap: () {
-                              setState(() {});
-                            },
+                            subtitle: Text("Kegiatan Kampus",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                           ),
                         ),
                       ],
