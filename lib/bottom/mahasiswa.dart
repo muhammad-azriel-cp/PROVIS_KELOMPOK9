@@ -20,10 +20,22 @@ class _MhsState extends State<Mhs> {
   // This widget is the root of your application.
 
   final List<mhsSeries> data = [
-    mhsSeries(year: "2019", ipk: 3.4, barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
-    mhsSeries(year: "2020", ipk: 3.1, barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
-    mhsSeries(year: "2021", ipk: 3.6, barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
-    mhsSeries(year: "2022", ipk: 4.0, barColor: charts.ColorUtil.fromDartColor(Colors.red)),
+    mhsSeries(
+        year: "2019",
+        ipk: 3.4,
+        barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
+    mhsSeries(
+        year: "2020",
+        ipk: 3.1,
+        barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
+    mhsSeries(
+        year: "2021",
+        ipk: 3.6,
+        barColor: charts.ColorUtil.fromDartColor(Colors.blue)),
+    mhsSeries(
+        year: "2022",
+        ipk: 4.0,
+        barColor: charts.ColorUtil.fromDartColor(Colors.red)),
   ];
 
   static get year => null;
@@ -67,13 +79,17 @@ class _MhsState extends State<Mhs> {
                   ])
                 ]),
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 20),
-                  alignment: Alignment.centerLeft,
-                  child: const Text("Statistik",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)),
+                  margin: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Text("Data Mahasiswa",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black)),
+                    ],
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 30, right: 30),
@@ -85,19 +101,21 @@ class _MhsState extends State<Mhs> {
                       return Card(
                         color: Colors.blueAccent,
                         child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ListTile(
-                              //leading: Icon(Icons.album, size: 45),
-                              title: Text(
-                                datastatistik[index],
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white70),
-                              ),
-                              subtitle: Text(angka[index].toString(),
-                                  style: TextStyle(
-                                      fontSize: 24, color: Colors.white)),
-                            ),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    datastatistik[index],
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  Text(angka[index].toString(),
+                                      style: TextStyle(
+                                          fontSize: 24, color: Colors.white)),
+                                ])
                           ],
                         ),
                       );
@@ -105,7 +123,7 @@ class _MhsState extends State<Mhs> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 20),
+                  margin: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
                   alignment: Alignment.centerLeft,
                   child: const Text("Charts",
                       style: TextStyle(
@@ -114,7 +132,9 @@ class _MhsState extends State<Mhs> {
                           color: Colors.black)),
                 ),
                 Container(
-                  child: mhsChart(data: data,),
+                  child: mhsChart(
+                    data: data,
+                  ),
                 )
               ]),
             ),
