@@ -8,13 +8,36 @@ class KerjasamaProdi extends StatefulWidget {
 }
 
 class _KerjasamaProdiState extends State<KerjasamaProdi> {
+  Card componentCard(String namaKerjasama, bool booleanWarna) {
+    return Card(
+      color: (booleanWarna) ? Colors.blueAccent : Colors.teal[50],
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: <Widget>[
+          Container(
+            child: ListTile(
+              leading: Icon(Icons.account_balance_sharp, size: 40),
+              title: Text(
+                namaKerjasama,
+                style: TextStyle(
+                    fontSize: 16,
+                    color: (booleanWarna) ? Colors.white : Colors.black),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   final int _currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-            //     appBar: AppBar(leading: IconButton(icon:Icon(Icons.arrow_back),
-            // onPressed:() => Navigator.pop(context, false),)),
+        //     appBar: AppBar(leading: IconButton(icon:Icon(Icons.arrow_back),
+        // onPressed:() => Navigator.pop(context, false),)),
         body: SingleChildScrollView(
           child: Column(children: <Widget>[
             Stack(children: <Widget>[
@@ -32,118 +55,57 @@ class _KerjasamaProdiState extends State<KerjasamaProdi> {
               Column(children: <Widget>[
                 Container(
                   alignment: Alignment.centerLeft,
-                  child: IconButton(onPressed:()=>Navigator.pop(context), 
-                  icon: Icon(Icons.arrow_back, color:Colors.white)),
-                  ),
-                    Padding(
-                        padding: EdgeInsets.only(top: 50),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Text(
-                                  "KONTRAK KERJASAMA FAKULTAS",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                  ),
-                                ),
+                  child: IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(Icons.arrow_back, color: Colors.white)),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Text(
+                              "KONTRAK KERJASAMA PROGRAM STUDI",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
                               ),
-                            ]))
-                  ])
+                            ),
+                          ),
+                        ]))
+              ])
             ]),
             Container(
-              margin: const EdgeInsets.only(left: 30, top: 20),
+              margin: const EdgeInsets.only(left: 35, top: 20, bottom: 20),
               alignment: Alignment.centerLeft,
-              child: const Text("Daftar Kontrak Kerjasama Universitas",
+              child: const Text("Daftar Kontrak Kerjasama Program Studi",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
+            // data dosen terbaik
             Container(
-              margin: const EdgeInsets.only( left: 30, right: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .2),
                 shrinkWrap: true,
                 children: [
-                  Card(
-                    color: Colors.blueAccent,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.account_balance_sharp, size: 40),
-                            title: Text(
-                              "Rancangan PKKM Prodi Arsitektur dan Wali Kota Bandung",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold,),
-                            ),
-                            onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    color: Colors.teal[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.account_balance_sharp, size: 40),
-                            title: Text(
-                              "Pengajaran dan Pengabdian Prodi Ilmu Komunikasi dan Tugubandung.id",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.black54, fontWeight: FontWeight.bold),
-                            ),
-                            onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    color: Colors.blueAccent,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.account_balance_sharp, size: 40),
-                            title: Text(
-                              "PPL di Filipina",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
-                            ),
-                                  onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  componentCard(
+                      "Rancangan PKKM Prodi Arsitektur dan Wali Kota Bandung",
+                      true),
+                  componentCard("PPL di Filipina", false),
+                  componentCard(
+                      "Pengajaran dan Pengabdian Prodi Ilmu Komunikasi dan Tugubandung.id",
+                      true),
                 ],
               ),
             ),
           ]),
         ),
-        
       ),
     );
   }
