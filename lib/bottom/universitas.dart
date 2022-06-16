@@ -13,7 +13,6 @@ class _UniversitasState extends State<Universitas> {
     "Jumlah Fakultas",
     "Jumlah Gedung Fakultas",
     "Jumlah Gedung Administrasi Akademik",
-    
   ];
   List<int> angka = [15, 20, 18];
   // This widget is the root of your application.
@@ -57,13 +56,17 @@ class _UniversitasState extends State<Universitas> {
                   ])
                 ]),
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 20),
-                  alignment: Alignment.centerLeft,
-                  child: const Text("Statistik",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)),
+                  margin: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Text("Data Universitas",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black)),
+                    ],
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 30, right: 30),
@@ -75,19 +78,21 @@ class _UniversitasState extends State<Universitas> {
                       return Card(
                         color: Colors.blueAccent,
                         child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ListTile(
-                              //leading: Icon(Icons.album, size: 45),
-                              title: Text(
-                                datastatistik[index],
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white70),
-                              ),
-                              subtitle: Text(angka[index].toString(),
-                                  style: TextStyle(
-                                      fontSize: 24, color: Colors.white)),
-                            ),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    datastatistik[index],
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                  Text(angka[index].toString(),
+                                      style: TextStyle(
+                                          fontSize: 24, color: Colors.white)),
+                                ])
                           ],
                         ),
                       );
@@ -95,7 +100,7 @@ class _UniversitasState extends State<Universitas> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 20),
+                  margin: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
                   alignment: Alignment.centerLeft,
                   child: const Text("Kontrak Kerjasama",
                       style: TextStyle(
@@ -118,7 +123,8 @@ class _UniversitasState extends State<Universitas> {
                           children: <Widget>[
                             Container(
                               child: ListTile(
-                                leading: Icon(Icons.account_balance_sharp, size: 45),
+                                leading:
+                                    Icon(Icons.account_balance_sharp, size: 45),
                                 // trailing: new Text(
                                 //   "30 Penelitian",
                                 //   style: TextStyle(color: Colors.white),
@@ -131,11 +137,12 @@ class _UniversitasState extends State<Universitas> {
                                 // subtitle: Text("Ilmu Komputer",
                                 //     style: TextStyle(
                                 //         fontSize: 16, color: Colors.white)),
-                              onTap: () {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                return KerjasamaUniv();
-                              }));
-                            },
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return KerjasamaUniv();
+                                  }));
+                                },
                               ),
                             ),
                           ],
@@ -175,25 +182,26 @@ class _UniversitasState extends State<Universitas> {
                           children: <Widget>[
                             Container(
                               child: ListTile(
-                                leading: Icon(Icons.business_rounded, size: 45),
-                                // trailing: new Text(
-                                //   "26 Penelitian",
-                                //   style: TextStyle(color: Colors.white),
-                                // ),
-                                title: Text(
-                                  "Program Studi",
-                                  style: const TextStyle(
-                                      fontSize: 20, color: Colors.white70),
-                                ),
-                                // subtitle: Text("Ilmu Komputer",
-                                //     style: TextStyle(
-                                //         fontSize: 16, color: Colors.white)),
-                              onTap: () {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                return KerjasamaProdi();
-                              }));
-                              }
-                              ),
+                                  leading:
+                                      Icon(Icons.business_rounded, size: 45),
+                                  // trailing: new Text(
+                                  //   "26 Penelitian",
+                                  //   style: TextStyle(color: Colors.white),
+                                  // ),
+                                  title: Text(
+                                    "Program Studi",
+                                    style: const TextStyle(
+                                        fontSize: 20, color: Colors.white70),
+                                  ),
+                                  // subtitle: Text("Ilmu Komputer",
+                                  //     style: TextStyle(
+                                  //         fontSize: 16, color: Colors.white)),
+                                  onTap: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return KerjasamaProdi();
+                                    }));
+                                  }),
                             ),
                           ],
                         ),
