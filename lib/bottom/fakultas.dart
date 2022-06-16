@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/bottom/detailFIP.dart';
 
 class Fakultas extends StatefulWidget {
   const Fakultas({Key? key}) : super(key: key);
@@ -25,21 +26,25 @@ class _FakultasState extends State<Fakultas> {
         children: <Widget>[
           Container(
             child: ListTile(
-              leading: Icon(Icons.business_rounded, size: 40),
-              title: Text(
-                namaFakultas,
-                style: TextStyle(
-                    fontSize: 16,
-                    color: (booleanWarna) ? Colors.white : Colors.black),
-              ),
-              subtitle: Container(
-                margin: const EdgeInsets.only(top: 10),
-                child: Text(jumlahProdi + " Program Studi",
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: (booleanWarna) ? Colors.white : Colors.black)),
-              ),
-            ),
+                leading: Icon(Icons.business_rounded, size: 40),
+                title: Text(
+                  namaFakultas,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: (booleanWarna) ? Colors.white : Colors.black),
+                ),
+                subtitle: Container(
+                  margin: const EdgeInsets.only(top: 10),
+                  child: Text(jumlahProdi + " Program Studi",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: (booleanWarna) ? Colors.white : Colors.black)),
+                ),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DetailFIP();
+                  }));
+                }),
           ),
         ],
       ),
