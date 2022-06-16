@@ -51,6 +51,7 @@ class _FakultasState extends State<Fakultas> {
     );
   }
 
+  
   final int _currentindex = 0;
   @override
   Widget build(BuildContext context) {
