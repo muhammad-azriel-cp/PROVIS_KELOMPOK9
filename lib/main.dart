@@ -17,16 +17,18 @@ class Login extends StatefulWidget {
 }
 
 class MyAppState extends State<Login> {
-  String _nama = "";
+  String _nip = "";
+  String _password = "";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'UPI dalam Data',
         home: Scaffold(
-          body: Container(
+            body: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
+            // background image
             image: DecorationImage(
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
@@ -72,7 +74,7 @@ class MyAppState extends State<Login> {
                   padding: EdgeInsets.only(right: 100, left: 100),
                   child: TextFormField(
                     onChanged: (text) {
-                      _nama = text;
+                      _nip = text;
                     },
                     decoration: new InputDecoration(
                       fillColor: Colors.white,
@@ -92,7 +94,7 @@ class MyAppState extends State<Login> {
                   padding: EdgeInsets.only(right: 100, left: 100),
                   child: TextFormField(
                     onChanged: (text) {
-                      _nama = text;
+                      _password = text;
                     },
                     decoration: new InputDecoration(
                       fillColor: Colors.white,
@@ -120,8 +122,3 @@ class MyAppState extends State<Login> {
         )));
   }
 }
-
-
-
-//             
-//         	   
