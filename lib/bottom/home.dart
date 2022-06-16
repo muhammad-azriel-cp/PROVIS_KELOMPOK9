@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'notifikasi.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,7 +16,8 @@ class _HomeState extends State<Home> {
     "Total Fakultas",
     "Total Prodi"
   ];
-
+  //ngambil tanggal hari ini
+  String tdata = DateFormat('yMMMMEEEEd').format(DateTime.now());
   List<int> angka = [40000, 300, 12, 120];
 
   final int _currentindex = 0;
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
                         Container(
                           margin: const EdgeInsets.only(top: 50,left: 20),
                           alignment: Alignment.centerLeft,
-                          child: const Text("Jum'at , 01 April 2022",
+                          child: Text(tdata,
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
@@ -63,19 +64,7 @@ class _HomeState extends State<Home> {
                                   color: Colors.white)),
                         ),
                       ]),
-                      Container(
-                        margin: const EdgeInsets.only(top: 50, left: 30),
-                        child: IconButton(
-                            onPressed: () => Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return Notifikasi();
-                                })),
-                            icon: Icon(
-                              Icons.notifications,
-                              color: Colors.white,
-                              size: 20.0,
-                            )),
-                      ),
+                      
                     ]),
               
                 Container(
