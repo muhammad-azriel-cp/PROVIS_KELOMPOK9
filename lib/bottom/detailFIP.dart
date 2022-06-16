@@ -17,13 +17,44 @@ class _DetailFIPState extends State<DetailFIP> {
 
   List<int> angka = [10, 50, 15, 4];
 
+  Card componentCard(
+      String programStudi, String akreditasi, bool booleanWarna) {
+    return Card(
+      color: (booleanWarna) ? Colors.blueAccent : Colors.teal[50],
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: <Widget>[
+          Container(
+            child: ListTile(
+              leading: Icon(Icons.school_outlined, size: 40),
+              title: Text(
+                programStudi,
+                style: TextStyle(
+                    fontSize: 16,
+                    color: (booleanWarna) ? Colors.white : Colors.black),
+              ),
+              subtitle: Container(
+                margin: const EdgeInsets.only(top: 10),
+                child: Text("Akreditasi " + akreditasi,
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: (booleanWarna) ? Colors.white : Colors.black)),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   final int _currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-            //     appBar: AppBar(leading: IconButton(icon:Icon(Icons.arrow_back),
-            // onPressed:() => Navigator.pop(context, false),)),
+        //     appBar: AppBar(leading: IconButton(icon:Icon(Icons.arrow_back),
+        // onPressed:() => Navigator.pop(context, false),)),
         body: SingleChildScrollView(
           child: Column(children: <Widget>[
             Stack(children: <Widget>[
@@ -42,7 +73,9 @@ class _DetailFIPState extends State<DetailFIP> {
                 //Yang diatas backgroud gambar
                 Row(children: <Widget>[
                   Container(
-                    child: IconButton(onPressed:()=>Navigator.pop(context), icon: Icon(Icons.arrow_back, color:Colors.white)),
+                    child: IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(Icons.arrow_back, color: Colors.white)),
                   ),
                   Container(
                     margin: const EdgeInsets.only(
@@ -57,13 +90,17 @@ class _DetailFIPState extends State<DetailFIP> {
               ])
             ]),
             Container(
-              margin: const EdgeInsets.only(left: 30, top: 20),
-              alignment: Alignment.centerLeft,
-              child: const Text("Statistik",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black)),
+              margin: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text("Data Fakultas Ilmu Pendidikan",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black)),
+                ],
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
@@ -74,21 +111,21 @@ class _DetailFIPState extends State<DetailFIP> {
                 children: List.generate(angka.length, (index) {
                   return Card(
                     color: Colors.blueAccent,
-                    
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        ListTile(
-                          //leading: Icon(Icons.album, size: 45),
-                          title: Text(
-                            datastatistik[index],
-                            style:
-                                TextStyle(fontSize: 16, color: Colors.white70),
-                          ),
-                          subtitle: Text(angka[index].toString(),
-                              style:
-                                  TextStyle(fontSize: 24, color: Colors.white)),
-                        ),
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                datastatistik[index],
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              Text(angka[index].toString(),
+                                  style: TextStyle(
+                                      fontSize: 24, color: Colors.white)),
+                            ])
                       ],
                     ),
                   );
@@ -96,131 +133,31 @@ class _DetailFIPState extends State<DetailFIP> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 30, top: 20),
+              margin: const EdgeInsets.only(left: 35, top: 20, bottom: 20),
               alignment: Alignment.centerLeft,
               child: const Text("Daftar Program Studi",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
+            // data dosen terbaik
             Container(
-              margin: const EdgeInsets.only( left: 30, right: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30),
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: (1 / .2),
                 shrinkWrap: true,
                 children: [
-                  Card(
-                    color: Colors.blueAccent,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.business_rounded, size: 40),
-                            title: Text(
-                              "Bimbingan dan Konseling",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
-                            ),
-                            subtitle: Text("Akreditasi A",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white)),
-                            onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    color: Colors.teal[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.business_rounded, size: 40),
-                            title: Text(
-                              "Administrasi Pendidikan",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Text("Akreditasi A",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.black)),
-                            onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    color: Colors.blueAccent,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.business_rounded, size: 40),
-                            title: Text(
-                              "Pendidikan Khusus",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.white70, fontWeight: FontWeight.bold,),
-                            ),
-                            subtitle: Text("10 Program Studi",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white)),
-                                  onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                   Card(
-                    color: Colors.teal[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Container(
-                          child: ListTile(
-                            leading: Icon(Icons.business_rounded, size: 40),
-                            title: Text(
-                              "Teknologi Pendidikan",
-                              style:
-                                  const TextStyle( fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Text("Akreditasi A",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.black)),
-                                  onTap: () {
-                              setState(() {
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  componentCard("Bimbingan dan Konseling", "A", true),
+                  componentCard("Administrasi Pendidikan", "A", false),
+                  componentCard("Pendidikan Khusus", "B", true),
+                  componentCard("Teknologi Pendidikan", "A", false),
                 ],
               ),
             ),
           ]),
         ),
-        
       ),
     );
   }
